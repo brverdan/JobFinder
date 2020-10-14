@@ -9,7 +9,8 @@ app.listen(PORT, function() {
 });
 
 //db connection
-db.authenticate().then(() => {
+db.authenticate()
+    .then(() => {
     console.log("Conectou ao banco com sucesso");
 }).catch(err => {
     console.log("Ocorreu um erro ao conectar", err);
