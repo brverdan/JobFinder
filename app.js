@@ -19,6 +19,9 @@ app.set('view engine', 'handlebars');
 //handle bars
 app.set('views', path.join(__dirname, 'views'));
 
+//static folder 
+app.use(express.static(path.join(__dirname, 'public')));
+
 //db connection
 db.authenticate()
     .then(() => {
@@ -29,7 +32,7 @@ db.authenticate()
 
 //routes
 app.get("/", (req, res) => {
-    res.send("Está funcionando ");
+    res.render('index');
 });
 
 //jobs routes
